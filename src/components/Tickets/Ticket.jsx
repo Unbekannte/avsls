@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import moment from 'moment';
 import 'moment/locale/ru';
 import './Tickets.css';
 
 class Ticket extends Component {
     constructor(props) {
-        super(props)
-
+        super(props);
         // console.log('ticket props:');
-        // console.log(this.props)
-
+        // console.log(this.props);
     }
 
     carrierInfo(name) {

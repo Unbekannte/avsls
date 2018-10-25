@@ -10,8 +10,7 @@ class TicketList extends Component {
         console.log(this.props);
     }
     
-	render() {
-        
+	render() {       
         
 		return (           
             <ul className="tickets__list">

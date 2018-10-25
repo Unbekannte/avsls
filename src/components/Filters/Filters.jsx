@@ -18,12 +18,10 @@ class TicketList extends Component {
         [].find.call(document.querySelectorAll('input[name=currency]'), (input) => input.value === this.props.currentCurency ).checked = true;
     }
 
-	render() {
-        const { currentCurency } = this.props;        
+	render() {    
         
 		return (           
             <ul className="filters__list">
-
                 <li className="filters__item filter">
                     <div className="filter__name">
                         Валюта
@@ -41,17 +39,6 @@ class TicketList extends Component {
                         </div>
                     </div>
                 </li>
-
-                {/* { this.props.tickets.map( (ticket) => {
-                    return (
-                            <Ticket
-                                currentCurency={this.props.currentCurency}
-                                ticket={ticket}
-                                carriers={this.props.carriers}
-                                rates={this.props.rates}
-                            />
-                    );
-                } ) }                 */}
             </ul>
 		);
 	}

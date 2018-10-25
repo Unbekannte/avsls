@@ -1,7 +1,7 @@
 body {
     font-family: 'Open Sans',Roboto, 'Helvetica Neue', sans-serif;
     max-width: 1020px;
-    padding: 0 30px;
+    padding: 0 50px;
     margin: 0 auto;
     
 }
@@ -32,9 +32,8 @@ ul {
     margin-right: 20px;
 }
 
-.ticket__list{
+.tickets{
     flex: 4 0 auto;
-    margin-right: 20px;
 }
 
 
@@ -43,19 +42,10 @@ ul {
 
 
 
-
-
-
-
-
-
-
-
-
-
 footer {
-    color : #666;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 30px;
+    color : #444;
+    border-top: 1px solid #ccc;
+    padding: 10px 50px 70px;
 
 }

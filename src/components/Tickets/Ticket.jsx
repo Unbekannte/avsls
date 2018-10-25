@@ -58,7 +58,7 @@ class Ticket extends Component {
         const {ticket} = this.props;
 
 		return (
-			<div className="ticket box">
+			<li className="tickets__item ticket box">
                 <div className="ticket__left-col">
                     <img    className="ticket__carrier-logo" 
                             src={ this.carrierInfo(ticket.carrier).logoSrc } 
@@ -100,7 +100,7 @@ class Ticket extends Component {
                     </div>
                 </div>
 
-			</div>
+			</li>
 		);
 	}
 }

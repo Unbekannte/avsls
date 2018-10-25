@@ -1,0 +1,14 @@
+.simple-logo {
+    display: block;
+    width: 78px;
+    height: 85px;
+    margin: 40px auto;
+    background: url(../../Content/images/Logo.png) center no-repeat;
+    background-size: contain;
+
+    transition: ease 0.2s 0.1s;
+}
+
+.simple-logo:hover {
+    transform: scale(1.3);
+}

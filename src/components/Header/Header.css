@@ -1,0 +1,13 @@
+.main-header {
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.main-header__nav-button {
+    margin-right: 20px !important;
+}

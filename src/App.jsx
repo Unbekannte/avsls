@@ -4,6 +4,8 @@ import './App.css';
 // import Header from './components/Header/Header';
 import Logo from './components/Header/Logo';
 import TicketList from './components/Tickets/TicketList';
+import Filters from './components/Filters/Filters';
+import Preloader from './components/Preloader/Preloader';
 
 class App extends Component {
 	state = {
@@ -74,20 +76,24 @@ class App extends Component {
 					<div class="content-wrapper">
 						<div className="filters box">
 							тут будут фильтры.
+                            <Filters 
+                                currentCurency={this.state.currentCurency}
+                            />
 							{/* <Filters /> */}
 						</div>
 
 						<div className="tickets">
-							{this.state.tickets.length &&
-							this.state.carriers.length &&
-							Object.keys(this.state.rates).length && (
+							{
+                                this.state.tickets.length && this.state.carriers.length && Object.keys(this.state.rates).length ?                                
 								<TicketList
 									currentCurency={this.state.currentCurency}
 									tickets={this.state.tickets}
 									carriers={this.state.carriers}
 									rates={this.state.rates}
 								/>
-							)}
+                                :
+                                <Preloader />
+                            }
 						</div>
 					</div>
 				</main>

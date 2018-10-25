@@ -1,0 +1,43 @@
+
+.preloader__wrapper {
+  height: 50px;
+  margin: 0 auto;
+  width: 180px;
+}
+.preloader__circle {
+  border-radius: 50%;
+  border: 3px solid rgb(255, 136, 0);
+  float: left;
+  height: 50px;
+  margin: 0 5px;
+  width: 50px;
+}
+  .preloader__circle-1 {
+    animation: move 1s ease-in-out infinite;
+  }
+  .preloader__circle-1a {
+    animation: fade 1s ease-in-out infinite;
+  }
+  @keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  .preloader__circle-2 {
+    animation: move 1s ease-in-out infinite;
+  }
+  @keyframes move {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(60px);}
+  }
+  .preloader__circle-1a {
+    margin-left: -55px;
+    opacity: 0;
+  }
+  .preloader__circle-3 {
+    animation: circle-3 1s ease-in-out infinite;
+    opacity: 1;
+  }
+  @keyframes circle-3 {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }

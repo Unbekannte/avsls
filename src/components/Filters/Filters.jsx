@@ -5,7 +5,7 @@ class TicketList extends Component {
     constructor(props) {
         super(props)
 
-        console.log('tls: ');
+        console.log('filters props: ');
         console.log(this.props);
     }
     
@@ -21,13 +21,13 @@ class TicketList extends Component {
                     </div>
                     <div className="filter__content">
                         <input type="radio" id="r1" name="currency" value="RUB" />
-                        <label for="r1">RUB</label>
+                        <label htmlFor="r1">RUB</label>
 
                         <input type="radio" id="r2" name="currency" value="RUB" />
-                        <label for="r2">USD</label>
+                        <label htmlFor="r2">USD</label>
 
                         <input type="radio" id="r3" name="currency" value="RUB" />
-                        <label for="r3">EUR</label>
+                        <label htmlFor="r3">EUR</label>
                     </div>
                 </li>
 

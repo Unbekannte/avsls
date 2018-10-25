@@ -73,7 +73,7 @@ class App extends Component {
 				</header>
 
 				<main>
-					<div class="content-wrapper">
+					<div className="content-wrapper">
 						<div className="filters box">
 							тут будут фильтры.
                             <Filters 

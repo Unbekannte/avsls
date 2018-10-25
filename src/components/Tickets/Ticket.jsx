@@ -8,13 +8,9 @@ class Ticket extends Component {
     constructor(props) {
         super(props)
 
-        console.log('ticket props:');
-        
-        console.log(this.props)
+        // console.log('ticket props:');
+        // console.log(this.props)
 
-        console.log('ticket state:');
-        
-        console.log(this.state)
     }
 
     carrierInfo(name) {

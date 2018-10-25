@@ -15,9 +15,10 @@ class TicketList extends Component {
         
 		return (           
             <ul className="tickets__list">
-                { this.props.tickets.map( (ticket) => {
+                { this.props.tickets.map( (ticket, index) => {
                     return (
                             <Ticket
+                                key={index}
                                 currentCurency={this.props.currentCurency}
                                 ticket={ticket}
                                 carriers={this.props.carriers}

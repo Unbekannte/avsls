@@ -26,7 +26,11 @@ class App extends Component {
 				console.error('ERROR! : ');
 				console.error(error.response);
 			});
-	}
+    }
+    
+    setCurrentCurrency = (value) => {
+        this.setState({ currentCurency: value })
+    }
 
 	componentDidMount() {
 		this.getData = this.getData.bind(this);
@@ -78,6 +82,7 @@ class App extends Component {
 							тут будут фильтры.
                             <Filters 
                                 currentCurency={this.state.currentCurency}
+                                setCurrentCurrency={this.setCurrentCurrency}
                             />
 							{/* <Filters /> */}
 						</div>

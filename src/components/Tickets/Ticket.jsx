@@ -21,7 +21,7 @@ class Ticket extends Component {
         const {rates, currentCurency} = this.props;
 
         let computedPrice = price * rates[currentCurency];
-        computedPrice = computedPrice.toFixed(2);
+        computedPrice = Number(computedPrice.toFixed(2));
         return computedPrice + ' ' + currentCurency;
         // вместо 3 букв лучше показывать хуй (значок валюты)
     }

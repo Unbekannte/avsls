@@ -11,8 +11,13 @@ class TicketList extends Component {
 
     setGender(event) {
         this.props.setCurrentCurrency(event.target.value);
-      }
+    }
     
+    componentDidMount() {
+        
+        [].find.call(document.querySelectorAll('input[name=currency]'), (input) => input.value === this.props.currentCurency ).checked = true;
+    }
+
 	render() {
         const { currentCurency } = this.props;        
         
@@ -23,15 +28,17 @@ class TicketList extends Component {
                     <div className="filter__name">
                         Валюта
                     </div>
-                    <div className="filter__content" onChange={this.setGender.bind(this)}>
-                        <input type="radio" id="r1" name="currency" value="RUB" />
-                        <label htmlFor="r1">RUB</label>
-
-                        <input type="radio" id="r2" name="currency" value="USD" />
-                        <label htmlFor="r2">USD</label>
-
-                        <input type="radio" id="r3" name="currency" value="EUR" />
-                        <label htmlFor="r3">EUR</label>
+                    <div class="filter__content">
+                        <div className="currency-filter" onChange={this.setGender.bind(this)}>
+                            <input type="radio" id="r1" name="currency" value="RUB" />
+                            <label htmlFor="r1">RUB</label>
+    
+                            <input type="radio" id="r2" name="currency" value="USD" />
+                            <label htmlFor="r2">USD</label>
+    
+                            <input type="radio" id="r3" name="currency" value="EUR" />
+                            <label htmlFor="r3">EUR</label>
+                        </div>
                     </div>
                 </li>
 

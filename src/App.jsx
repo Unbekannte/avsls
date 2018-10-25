@@ -9,7 +9,7 @@ import Preloader from './components/Preloader/Preloader';
 
 class App extends Component {
 	state = {
-		currentCurency: 'EUR',
+		currentCurency: 'RUB',
 		tickets: [],
 		carriers: [],
 		rates: {}
@@ -79,7 +79,6 @@ class App extends Component {
 				<main>
 					<div className="content-wrapper">
 						<div className="filters box">
-							тут будут фильтры.
                             <Filters 
                                 currentCurency={this.state.currentCurency}
                                 setCurrentCurrency={this.setCurrentCurrency}

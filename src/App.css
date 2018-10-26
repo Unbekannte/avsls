@@ -16,6 +16,7 @@ ul {
 .content-wrapper {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .box {    
@@ -37,6 +38,11 @@ ul {
 
 .tickets{
     flex: 4 0 auto;
+    
+}
+
+.filters, .tickets {
+    margin-top: 20px;
 }
 
 .preloader {

@@ -1,111 +1,92 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
+import React, { Component } from "react";
+import axios from "axios";
+import "./App.css";
 // import Header from './components/Header/Header';
-import Logo from './components/Header/Logo';
-import TicketList from './components/Tickets/TicketList';
-import Filters from './components/Filters/Filters';
-import Preloader from './components/Preloader/Preloader';
+import Logo from "./components/Header/Logo";
+import TicketList from "./components/Tickets/TicketList";
+import Filters from "./components/Filters/Filters";
+import Preloader from "./components/Preloader/Preloader";
 
 class App extends Component {
-	state = {
-		currentCurency: 'RUB',
-		tickets: [],
-		carriers: [],
-		rates: {}
-	};
+    constructor(props) {
+        super(props);
 
-	getData(target, field) {
-		axios
-			.get(target)
-			.then((response) => {
-				const result = field ? response.data[field] : response.data;
-				this.setState({ result });
-			})
-			.catch((error) => {
-				console.error('ERROR! : ');
-				console.error(error.response);
-			});
-    }
-    
-    setCurrentCurrency = (value) => {
-        this.setState({ currentCurency: value })
+        this.state = {
+            currentCurency: "RUB",
+            tickets: [],
+            carriers: [],
+            rates: {}
+        };
+
+        this.getData = this.getData.bind(this);
     }
 
-	componentDidMount() {
-		this.getData = this.getData.bind(this);
+    getData = (target, field) =>  {
+        axios
+            .get(target)
+            .then(response => {
+                const result = field ? response.data[field] : response.data;
+                this.setState({ [field]: result });
+            })
+            .catch(error => {
+                console.error("ERROR! : ");
+                console.error(error.response);
+            });
+    }
 
-		axios.get('./data/tickets.json').then((res) => {
-			const tickets = res.data.tickets;
-			this.setState({ tickets });
-		});
+    setCurrentCurrency = value => {
+        this.setState({ currentCurency: value });
+    };
 
-		// this.getData('./data/carriers.json', 'carriers');
-		axios
-			.get('./data/carriers.json')
-			.then((res) => {
-				const carriers = res.data.carriers;
-				this.setState({ carriers });
-			})
-			.then((response) => console.log(response))
-			.catch((error) => {
-				console.error('ERROR! : ');
-				console.error(error.response);
-			});
+    componentDidMount() {
+        this.getData("./data/tickets.json", 'tickets');
+        this.getData('./data/carriers.json', 'carriers');
+        this.getData('https://openexchangerates.org/api/latest.json?app_id=a22f4a72fe2846f3b490dfddfc250147&base=RUB', 'rates');
+    }
 
-		axios
-			.get('https://openexchangerates.org/api/latest.json?app_id=a22f4a72fe2846f3b490dfddfc250147&base=RUB')
-			.then((res) => {
-				const rates = res.data.rates;
-				this.setState({ rates });
-				console.log(this.state);
-			})
-			.then((response) => console.log(response))
-			.catch((error) => {
-				console.error('ERROR! : ');
-				console.error(error.response);
-			});
+    render() {
+        return (
+            <div className="App">
+                <header>
+                    <Logo />
+                </header>
 
-		// https://openexchangerates.org/api/latest.json?app_id=a22f4a72fe2846f3b490dfddfc250147&base=RUB
-	}
-
-	render() {
-		return (
-			<div className="App">
-				<header>
-					<Logo />
-				</header>
-
-				<main>
-					<div className="content-wrapper">
-						<div className="filters box">
-                            <Filters 
+                <main>
+                    <div className="content-wrapper">
+                        <div className="filters box">
+                            <Filters
                                 currentCurency={this.state.currentCurency}
                                 setCurrentCurrency={this.setCurrentCurrency}
                             />
-							{/* <Filters /> */}
-						</div>
+                            {/* <Filters /> */}
+                        </div>
 
-						<div className="tickets">
-							{
-                                this.state.tickets.length && this.state.carriers.length && Object.keys(this.state.rates).length ?                                
-								<TicketList
-									currentCurency={this.state.currentCurency}
-									tickets={this.state.tickets}
-									carriers={this.state.carriers}
-									rates={this.state.rates}
-								/>
-                                :
-                                <Preloader />
+                        <div className="tickets">
+                            {
+                                console.log("???????: ")}{
+                                console.log(this.state)
                             }
-						</div>
-					</div>
-				</main>
+                            {this.state.tickets.length &&
+                            this.state.carriers.length &&
+                            Object.keys(this.state.rates).length ? (
+                                <TicketList
+                                    currentCurency={this.state.currentCurency}
+                                    tickets={this.state.tickets}
+                                    carriers={this.state.carriers}
+                                    rates={this.state.rates}
+                                />
+                            ) : (
+                                
+                                <Preloader />
+                            )}
+                        </div>
+                    </div>
+                </main>
 
-				<footer>I ball was rawt ©</footer>
-			</div>
-		);
-	}
+                <footer>I ball was rawt ©</footer>
+            </div>
+        );
+    }
 }
 
 export default App;

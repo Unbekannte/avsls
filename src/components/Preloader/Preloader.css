@@ -27,7 +27,7 @@
   }
   @keyframes move {
     0% {transform: translateX(0);}
-    100% {transform: translateX(60px);}
+    100% {transform: translateX(80px);}
   }
   .preloader__circle-1a {
     margin-left: -55px;

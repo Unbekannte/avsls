@@ -26,7 +26,7 @@ class TicketList extends Component {
                     <div className="filter__name">
                         Валюта
                     </div>
-                    <div class="filter__content">
+                    <div className="filter__content">
                         <div className="currency-filter" onChange={this.setGender.bind(this)}>
                             <input type="radio" id="r1" name="currency" value="RUB" />
                             <label htmlFor="r1">RUB</label>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9" height="7">
+    <defs>
+        <path id="a" d="M124.5 355.5l2 2 4-4"/>
+    </defs>
+    <use fill-opacity="0" stroke="#3e9ce8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" xlink:href="#a" transform="translate(-123 -352)"/>
+</svg>

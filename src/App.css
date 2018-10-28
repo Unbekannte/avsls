@@ -49,8 +49,38 @@ ul {
     
 }
 
+/* custom-input */
 
+.custom-input {
 
+}
+
+.custom-input input {
+    visibility: hidden;
+    display: none;
+}
+
+.custom-input input + label::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17px;
+    height: 17px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.custom-input input:checked + label::before {
+    background: #f2fcff url(Content/images/checkbox-arrow.svg) center no-repeat;
+}
+
+.custom-input input + label {
+    position: relative;
+    padding-left: 25px;
+}
+
+/*  */
 
 
 

@@ -11,18 +11,24 @@ class TicketList extends Component {
     }
     
 	render() {       
+        const { tickets, currentCurency, carriers, rates, stopsFilter } = this.props;
         
 		return (           
             <ul className="tickets__list">
-                { this.props.tickets.map( (ticket, index) => {
+                { tickets
+                    .filter( (ticket) => {
+                        if ( stopsFilter.includes('all')) { return true }
+                        else { return stopsFilter.includes(ticket.stops.toString()) }
+                    } )
+                    .map( (ticket, index) => {
                     return (
-                            <Ticket
-                                key={index}
-                                currentCurency={this.props.currentCurency}
-                                ticket={ticket}
-                                carriers={this.props.carriers}
-                                rates={this.props.rates}
-                            />
+                        <Ticket
+                            key={index}
+                            currentCurency={currentCurency}
+                            ticket={ticket}
+                            carriers={carriers}
+                            rates={rates}
+                        />
                     );
                 } ) }                
             </ul>

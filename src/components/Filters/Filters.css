@@ -15,6 +15,13 @@
     margin-top: 0;
 }
 
+.filters__item fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: block;
+}
+
 .filter__name {
     text-transform: uppercase;
     font-size: 1rem;
@@ -26,6 +33,11 @@
 
 }
 
+
+
+
+
+/* /////////////////////////////////////////////////// */
 
 .currency-filter {
     display: flex;
@@ -39,7 +51,7 @@
 
 .currency-filter label {
     flex: 1 1 auto;
-    
+
     text-align: center;
 
     text-transform: uppercase;
@@ -56,12 +68,12 @@
 }
 
 .currency-filter label:first-of-type {
-    border-top-left-radius: 10%;
-    border-bottom-left-radius: 10%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 .currency-filter label:last-of-type {
-    border-top-right-radius: 10%;
-    border-bottom-right-radius: 10%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .currency-filter label:hover {
@@ -74,4 +86,39 @@
     background-color: #2196f3;
     border: 1px solid #2196f3;
     color: #fff;
+}
+/* //////////////////////////////////////////// */
+
+
+
+
+
+/* ////////////////////////////////////////////// */
+
+.stops-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stops-filter .custom-input {
+    margin: 0 -15px;
+}
+
+.stops-filter .custom-input label {
+    display: block;
+    padding: 10px 20px;
+    padding-left: 45px;
+    user-select: none;
+}
+.stops-filter .custom-input label::before {
+    left: 15px;
+}
+
+.stops-filter .custom-input:hover {
+    background-color: #f2fcff;
+}
+
+.stops-filter .custom-input:first-of-type {
+    margin-top: 0;
 }

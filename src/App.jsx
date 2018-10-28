@@ -15,7 +15,8 @@ class App extends Component {
             currentCurency: "RUB",
             tickets: [],
             carriers: [],
-            rates: {}
+            rates: {},
+            stopsFilter: ['all']
         };
 
         this.getData = this.getData.bind(this);
@@ -38,6 +39,10 @@ class App extends Component {
         this.setState({ currentCurency: value });
     };
 
+    setStopsFilter = value => {
+        this.setState({ stopsFilter: value });
+    };
+
     componentDidMount() {
         this.getData("./data/tickets.json", 'tickets');
         this.getData('./data/carriers.json', 'carriers');
@@ -56,7 +61,9 @@ class App extends Component {
                         <div className="filters box">
                             <Filters
                                 currentCurency={this.state.currentCurency}
-                                setCurrentCurrency={this.setCurrentCurrency}
+                                changeCurrencyFilter={this.setCurrentCurrency}
+                                stopsFilter={this.state.stopsFilter}
+                                setStopsFilter={this.setStopsFilter}
                             />
                             {/* <Filters /> */}
                         </div>
@@ -74,6 +81,7 @@ class App extends Component {
                                     tickets={this.state.tickets}
                                     carriers={this.state.carriers}
                                     rates={this.state.rates}
+                                    stopsFilter={this.state.stopsFilter}
                                 />
                             ) : (
                                 

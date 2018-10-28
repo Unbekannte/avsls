@@ -4,10 +4,7 @@ import Ticket from './Ticket';
 
 class TicketList extends Component {
     constructor(props) {
-        super(props)
-
-        console.log('tls: ');
-        console.log(this.props);
+        super(props);
     }
     
 	render() {       
@@ -17,8 +14,8 @@ class TicketList extends Component {
             <ul className="tickets__list">
                 { tickets
                     .filter( (ticket) => {
-                        if ( stopsFilter.includes('all')) { return true }
-                        else { return stopsFilter.includes(ticket.stops.toString()) }
+                        if ( stopsFilter['all']) { return true }
+                        else { return stopsFilter[ticket.stops] }
                     } )
                     .map( (ticket, index) => {
                     return (

@@ -103,6 +103,7 @@
 
 .stops-filter .custom-input {
     margin: 0 -15px;
+    font-weight: 400;
 }
 
 .stops-filter .custom-input label {
@@ -110,6 +111,10 @@
     padding: 10px 20px;
     padding-left: 45px;
     user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .stops-filter .custom-input label::before {
     left: 15px;
@@ -121,4 +126,22 @@
 
 .stops-filter .custom-input:first-of-type {
     margin-top: 0;
+}
+
+.stops-filter__button-only {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    color: #2196f3;
+    cursor: pointer;
+    outline: none;
+
+    display: none;
+
+    padding: 10px 5px;
+    margin: -10px -5px;
+}
+
+.custom-input:hover .stops-filter__button-only {
+    display: inline-block;
 }

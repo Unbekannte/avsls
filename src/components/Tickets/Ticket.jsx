@@ -26,6 +26,9 @@ class Ticket extends Component {
     renderStops(num) {
         let phrase;
         switch (num) {
+            case 0:
+                phrase =  'Без пересадок';
+                break;
             case 1:
                 phrase =  num + ' пересадка';
                 break;

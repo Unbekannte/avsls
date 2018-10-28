@@ -16,7 +16,7 @@ class App extends Component {
             tickets: [],
             carriers: [],
             rates: {},
-            stopsFilter: ['all']
+            stopsFilter: {}
         };
 
         this.getData = this.getData.bind(this);
@@ -69,10 +69,6 @@ class App extends Component {
                         </div>
 
                         <div className="tickets">
-                            {
-                                console.log("???????: ")}{
-                                console.log(this.state)
-                            }
                             {this.state.tickets.length &&
                             this.state.carriers.length &&
                             Object.keys(this.state.rates).length ? (
